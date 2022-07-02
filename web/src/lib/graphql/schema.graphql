@@ -1,0 +1,18 @@
+type Gravatar @entity {
+  id: ID!
+  owner: Bytes!
+  displayName: String!
+  imageUrl: String!
+}
+
+type AddressValue @entity {
+  id: ID!
+  count: Int!
+}
+type Address @entity {
+  id: ID!
+  timesChange: Int!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  currentValue: BigInt!
+}
