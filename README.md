@@ -6,8 +6,7 @@
 Создай данное чудо в своей ребе в гитхабе
 
 
-yarn global add @graphprotocol/graph-cli
-
+```npm install -g @graphprotocol/graph-cli``` (working for windows)
 
 yarn add --dev @graphprotocol/graph-ts
 
