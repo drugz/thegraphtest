@@ -1,0 +1,28 @@
+# Typical File for extension: vscode-graphql & CodeGen!
+projects:
+  default:
+    schema:
+      # If you have the introspection file already here:
+      # - ./src/lib/graphql/schema.json
+      # - ./src/lib/graphql/schema.graphql
+      - https://api.studio.thegraph.com/query/30342/winter/v0.0.1/
+      # If not, you can get the schema from the server with some thing like:
+      # - https://countries.trevorblades.com/graphql
+      # More options here https://www.graphql-code-generator.com/docs/config-reference/schema-field
+    documents:
+      - '**/*.gql'
+    extensions:
+      codegen:
+        generates:
+          ./src/lib/graphql/_kitql/graphqlTypes.ts:
+            plugins:
+              - typescript
+              - typescript-operations
+              - typed-document-node
+              - typescript-document-nodes
+
+          ./src/lib/graphql/_kitql/graphqlStores.ts:
+            plugins:
+              - '@kitql/graphql-codegen'
+            config:
+              importBaseTypesFrom: $lib/graphql/_kitql/graphqlTypes

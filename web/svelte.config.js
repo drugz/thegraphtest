@@ -1,6 +1,9 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 
+import watchAndRun from '@kitql/vite-plugin-watch-and-run'
+
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -8,7 +11,24 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+
+		vite: {
+			plugins: [
+				watchAndRun([
+					{
+						watch: '**/*.(gql|graphql)',
+						run: 'npm run gen'
+					}
+				])
+			]
+		},
+		alias: {
+			// $static: 'static',
+			$lib: 'src/lib',
+			$components: 'src/lib/components',
+			$utils: 'src/utils'
+		}
 	}
 };
 

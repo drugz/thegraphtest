@@ -6,7 +6,8 @@
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
+		"prepare": "svelte-kit sync && npm run gen",
+		"gen": "graphql-codegen --config ./.graphqlrc.yaml",
 		"test": "playwright test",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -33,5 +34,6 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@kitql/all-in": "^0.6.8"
 	}
 }
