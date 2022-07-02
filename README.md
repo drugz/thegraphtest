@@ -8,3 +8,7 @@
 
 yarn global add @graphprotocol/graph-cli
 
+
+yarn add --dev @graphprotocol/graph-ts
+
+npm init svelte@next
