@@ -15,6 +15,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@graphprotocol/graph-ts": "^0.27.0",
 		"@playwright/test": "^1.22.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
@@ -29,11 +30,11 @@
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
 		"tslib": "^2.3.1",
-		"typescript": "^4.7.2",
-		"@graphprotocol/graph-ts": "^0.27.0"
+		"typescript": "^4.7.2"
 	},
 	"type": "module",
 	"dependencies": {
-		"@kitql/all-in": "^0.6.8"
+		"@kitql/all-in": "^0.6.8",
+		"@sveltejs/adapter-vercel": "^1.0.0-next.59"
 	}
 }
