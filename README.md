@@ -6,8 +6,30 @@
 Создай данное чудо в своей ребе в гитхабе
 
 
-```npm install -g @graphprotocol/graph-cli``` (working for windows)
+(working for windows)
+```
+npm install -g @graphprotocol/graph-cli
+``` 
 
-yarn add --dev @graphprotocol/graph-ts
+```
+graph init --from-example drug_z/winter
 
+```
+
+```
+cd winter
+graph auth --product hosted-service <ACCESS_TOKEN>
+graph deploy --product hosted-service drug_z/winter
+graph auth --studio d2fa7bffe412c6092b927fb9b8987a49
+graph codegen && graph build
+graph deploy --studio winter
+```
+
+subgraph endpoint: https://api.studio.thegraph.com/query/30342/winter/v0.0.1 
+
+
+```
+cd web
 npm init svelte@next
+yarn add --dev @graphprotocol/graph-ts
+```
