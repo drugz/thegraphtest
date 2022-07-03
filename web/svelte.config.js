@@ -12,22 +12,25 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		// adapter: adapter(),
+		experimental: {
+			useVitePreprocess: true
+		},
+		adapter: adapter(),
 
-		adapter: vercel({
-			// if true, will deploy the app using edge functions
-			// (https://vercel.com/docs/concepts/functions/edge-functions)
-			// rather than serverless functions
-			edge: false,
+		// adapter: vercel({
+		// 	// if true, will deploy the app using edge functions
+		// 	// (https://vercel.com/docs/concepts/functions/edge-functions)
+		// 	// rather than serverless functions
+		// 	edge: false,
 	  
-			// an array of dependencies that esbuild should treat
-			// as external when bundling functions
-			external: [],
+		// 	// an array of dependencies that esbuild should treat
+		// 	// as external when bundling functions
+		// 	external: [],
 	  
-			// if true, will split your app into multiple functions
-			// instead of creating a single one for the entire app
-			split: false
-		  }),
+		// 	// if true, will split your app into multiple functions
+		// 	// instead of creating a single one for the entire app
+		// 	split: false
+		//   }),
 		vite: {
 			plugins: [
 				watchAndRun([
@@ -43,6 +46,9 @@ const config = {
 			$lib: 'src/lib',
 			$components: 'src/lib/components',
 			$utils: 'src/utils'
+		},
+		methodOverride: {
+			allowed: ['PATCH', 'DELETE']
 		}
 	}
 };
