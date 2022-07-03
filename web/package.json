@@ -18,6 +18,7 @@
 		"@graphprotocol/graph-ts": "^0.27.0",
 		"@playwright/test": "^1.22.2",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-vercel": "^1.0.0-next.59",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -34,7 +35,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@kitql/all-in": "^0.6.8",
-		"@sveltejs/adapter-vercel": "^1.0.0-next.59"
+		"@kitql/all-in": "^0.6.8"
 	}
 }
